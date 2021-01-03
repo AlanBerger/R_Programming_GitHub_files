@@ -70,7 +70,7 @@ breakpts <- seq(3, 8, 0.25)
 hist(v, breaks = breakpts)  # the peak seems to be around 5.5 as it should be 
 ```
 
-![histogram of sampled means](https://github.com/AlanBerger/R_Programming_GitHub_files/reply-to-query-on-sample-2-Jan-2021-chunk.png)
+![histogram of sampled means](https://github.com/AlanBerger/R_Programming_GitHub_files/blob/master/reply-to-query-on-sample-2-Jan-2021-chunk.png)
 
 Now use a matrix to get the samples
 
