@@ -19,6 +19,8 @@ site: https://github.com/rdpeng/ProgrammingAssignment2
 A detailed description of how makeVector_and_cachemean work is available in an article by Leonard Greski at:
 https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md 
 
+If you download a copy of this pdf file into your computer, then the web links in it will work. 
+
 A call to the makeVector function returns an R object that is a list of 4 functions, and also is a ***function closure***,
 well described in Leonard Greski's article, but not referred to by that name. Function closures are also discussed in, for
 example, https://github.com/AlanBerger/R_Programming_GitHub_files/blob/master/reply-to-where-function-closure-variables-are-8-Jan-2020.md 
@@ -217,7 +219,7 @@ get_the_mean_of_v(1:3)  # again, check cached the mean
 Hope this is helpful in understanding R's lexical scoping and how a function closure works.
 
 Note the corresponding version of the code above for the inverse of a matrix is NOT what 
-what is required for the second assignment in the R Programming course.
+is required for the second assignment in the R Programming course.
  
 = = = = = = = = = = = = = = = = = = = = = = = = 
 
