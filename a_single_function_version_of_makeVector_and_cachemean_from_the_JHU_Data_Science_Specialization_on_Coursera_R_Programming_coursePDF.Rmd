@@ -17,11 +17,11 @@ involving lexical scoping, the pair of R functions, **makeVector** and **cacheme
 available within the **README.md** file in Professor Roger D. Peng's GitHub 
 site: https://github.com/rdpeng/ProgrammingAssignment2
 A detailed description of how makeVector_and_cachemean work is available in an article by Leonard Greski at:
-[L_Greski_article](https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md)
+https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md 
 
 A call to the makeVector function returns an R object that is a list of 4 functions, and also is a ***function closure***,
 well described in Leonard Greski's article, but not referred to by that name. Function closures are also discussed in, for
-example, [AB_function_closure](https://github.com/AlanBerger/R_Programming_GitHub_files/blob/master/reply-to-where-function-closure-variables-are-8-Jan-2020.md)
+example, https://github.com/AlanBerger/R_Programming_GitHub_files/blob/master/reply-to-where-function-closure-variables-are-8-Jan-2020.md 
 
 A good observation in the Discussion Forum in the JHU R Programming class noted that someone could ``misuse" the **setmean** function provided 
 by makeVector, replacing the current saved (*cached*) value of the mean of a given vector with an incorrect value.   
@@ -42,13 +42,13 @@ and accessing and modifying them (see the referenced articles above, or other so
 When get_the_mean_of_v is called, its argument should be a non-empty numeric vector, call it v. 
 get_the_mean_of_v calculates and returns the mean of v, and "stores" the calculated mean. The key point of 
 this programming example is to use lexical scoping and the properties of a function closure so that 
-if get_the_mean_of_v has been called before in the current R session, and the most recent call was with the same 
-value of v as the present call, then get_the_mean_of_v will ``fetch" the previously calculated value of the mean 
-that was stored in the parent environment of get_the_mean_of_v (possible since get_the_mean_of_v is a function closure),  
+if  get_the_mean_of_v  has been called before in the current R session, and the most recent call was with the same 
+value of v as the present call, then  get_the_mean_of_v  will ``fetch" the previously calculated value of the mean 
+that was stored in the parent environment of  get_the_mean_of_v (possible since get_the_mean_of_v is a function closure),  
 rather than recalculing the mean.
 
 If want to copy code, copy it from the Rmd (R Markdown) file, not the pdf file (copying code from a pdf file in GitHub might entrain 
-formatting characters).
+formatting characters unacceptable to R).
 
 ``` {r}
 
@@ -56,11 +56,14 @@ get_and_cache_mean <- function() {
 # call it via:     get_the_mean_of_v <- get_and_cache_mean()
 
 # get_and_cache_mean returns the function get_the_mean_of_v 
-# which will be a function of the argument  v, 
-# and it will also be a function closure
+
+# get_the_mean_of_v  will have 1 argument,  v (a numeric vector),
+# and will calculate the mean of v, 
+# and  get_the_mean_of_v  will also be a function closure
 
     m <- NULL  # initialize the mean m of v to be NULL so
 #                        know need to calculate it
+
     v_for_which_calculated_the_mean <- NULL  
 #  the v for which have calculated the mean, initially NULL
 
@@ -78,7 +81,7 @@ get_and_cache_mean <- function() {
             stop("the argument v of  get_the_mean_of_v  is not numeric")
        if(is.vector(v)  == FALSE) 
             stop("the argument v of get_the_mean_of_v is not a vector")
-      if(length(v) < 1) stop("length of v is < 1")
+       if(length(v) < 1) stop("length of v is < 1")
 #     note a variable that is a single value is, in R, 
 #     a vector of length 1
 #     a matrix and a data frame are examples of R objects
@@ -95,7 +98,7 @@ get_and_cache_mean <- function() {
 #      appropriate to use
 
 #      need to be VERY careful with any NULL values 
-#      use the  is.null   function to test a potential NULL value; 
+#      use the  is.null   function to test for a potential NULL value; 
 #      if have verified that
 #      the value is not NULL, 
 #      then can do regular logical tests or arithmetic
@@ -195,7 +198,7 @@ get_the_mean_of_v(1:3)  # again, check cached the mean
 
 
 ## the tests below will give errors and put the R session into Browse
-## (note they stop R Markdown)
+## (note they stop R Markdown, so not run)
 ## exit Browse by hitting the Escape key
  
 ## get_the_mean_of_v("character string")  
@@ -212,6 +215,9 @@ get_the_mean_of_v(1:3)  # again, check cached the mean
 ```
 
 Hope this is helpful in understanding R's lexical scoping and how a function closure works.
+
+Note the corresponding version of the code above for the inverse of a matrix is NOT what 
+what is required for the second assignment in the R Programming course.
  
 = = = = = = = = = = = = = = = = = = = = = = = = 
 
